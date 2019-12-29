@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ApiRestDotNetCore.Data;
+using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiRestDotNetCore
 {
@@ -26,6 +29,7 @@ namespace ApiRestDotNetCore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<CoreMigrationDbContext>(options => options.UseSqlServer("Server=localhost,1433; Database=core_migrations; User=sa; Password=Dias!020512;"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
