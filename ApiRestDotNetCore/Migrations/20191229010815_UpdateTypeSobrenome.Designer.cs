@@ -4,14 +4,16 @@ using ApiRestDotNetCore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApiRestDotNetCore.Migrations
 {
     [DbContext(typeof(CoreMigrationDbContext))]
-    partial class CoreMigrationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191229010815_UpdateTypeSobrenome")]
+    partial class UpdateTypeSobrenome
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,8 +34,8 @@ namespace ApiRestDotNetCore.Migrations
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Sobrenome")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Sobrenome")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

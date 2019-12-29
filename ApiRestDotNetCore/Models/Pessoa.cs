@@ -12,7 +12,7 @@ namespace ApiRestDotNetCore.Models
 
         public string Nome { get; set; }
 
-        public int Sobrenome { get; set; }
+        public string Sobrenome { get; set; }
 
     }
 }

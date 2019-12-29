@@ -29,6 +29,8 @@ namespace ApiRestDotNetCore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            //Usar arquivo de configuracao
+            //https://www.youtube.com/watch?v=xMktEpPmadI
             services.AddDbContext<CoreMigrationDbContext>(options => options.UseSqlServer("Server=localhost,1433; Database=core_migrations; User=sa; Password=Dias!020512;"));
         }
 
