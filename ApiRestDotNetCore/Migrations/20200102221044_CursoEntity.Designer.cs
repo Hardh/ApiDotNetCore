@@ -4,14 +4,16 @@ using ApiRestDotNetCore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApiRestDotNetCore.Migrations
 {
     [DbContext(typeof(CoreMigrationDbContext))]
-    partial class CoreMigrationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200102221044_CursoEntity")]
+    partial class CursoEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,7 +28,7 @@ namespace ApiRestDotNetCore.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("CourseName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
